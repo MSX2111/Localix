@@ -1,0 +1,705 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+body {
+  background-color: #efefef;
+  background-image: linear-gradient(to right, #e0e3eb8e 1px, transparent 1px),
+    linear-gradient(to bottom, #e0e3eb8e 1px, transparent 1px);
+  background-size: 60px 60px;
+  overflow-x: hidden;
+}
+body::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      circle at top left,
+      rgba(0, 255, 120, 0.18) 0,
+      rgba(0, 255, 120, 0.1) 120px,
+      transparent 300px
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(0, 255, 120, 0.18) 0,
+      rgba(0, 255, 120, 0.1) 120px,
+      transparent 300px
+    );
+  pointer-events: none;
+}
+nav {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding: 0 100px;
+  background-color: #ededed;
+  box-shadow: 0 4px 24px 0 rgba(37, 37, 37, 0.1),
+    0 1.5px 4px 0 rgba(37, 37, 37, 0.08);
+  box-sizing: border-box;
+  padding-left: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 80px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  justify-content: center; /* Center the ul content */
+  gap: 40px;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-left: auto;
+}
+nav ul a {
+  text-decoration: none;
+  padding: 10px 15px;
+  color: #000;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+nav ul a:hover {
+  background-color: #dfdfdf;
+}
+.head {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: center; /* Center the head content */
+}
+.pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #c4c4c4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #3c3c3c;
+}
+.signOut a {
+  color: #fff;
+  background-color: #101010;
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: none;
+}
+.signOut a:hover {
+  background-color: #3c3c3c;
+}
+.logo {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Product Insights Section */
+.product-insights {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 32px 24px;
+  margin: 40px auto 0 auto;
+  max-width: 700px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.product-insights h2 {
+  font-size: 2em;
+  background: linear-gradient(90deg, #000 0%, #757474 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+}
+
+.insight-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.insight-card {
+  background: #f7f7f7;
+  border-radius: 10px;
+  padding: 32px 28px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 1px 4px #0001;
+  gap: 10px;
+}
+.insight-card i {
+  font-size: 2.2em;
+  color: #1976d2;
+  margin-bottom: 8px;
+}
+.insight-card h3 {
+  font-size: 1.1em;
+  margin-bottom: 4px;
+  color: #222;
+}
+.insight-card p {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #101010;
+}
+
+.add-product-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #101010;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 6px 32px 0 rgba(67, 67, 67, 0.12),
+    0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  transition: background 0.2s;
+  margin: 32px auto 0 auto; /* Center horizontally */
+}
+
+.dashboard-tabs {
+  width: 100vw;
+  min-height: 100vh;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-top: 0;
+  padding-top: 80px;
+}
+
+.tab-bar {
+  display: flex;
+  width: 100vw;
+  background: #fff;
+  box-shadow: 0 2px 8px #0001;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 22px 0;
+  font-size: 1.2em;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: background 0.2s, border-bottom 0.2s;
+  color: #222;
+  font-weight: 600;
+}
+.tab-btn.active {
+  border-bottom: 3px solid #1976d2;
+  background: #f7f7f7;
+  color: #1976d2;
+}
+
+.tab-content {
+  display: none;
+  width: 100%;
+  padding: 40px 0 0 0;
+}
+.tab-content.active {
+  display: block;
+}
+
+.insight-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.insight-card {
+  background: #f7f7f7;
+  border-radius: 10px;
+  padding: 32px 28px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 1px 4px #0001;
+  gap: 10px;
+}
+.insight-card i {
+  font-size: 2.2em;
+  color: #1976d2;
+  margin-bottom: 8px;
+}
+.insight-card h3 {
+  font-size: 1.1em;
+  margin-bottom: 4px;
+  color: #222;
+}
+.insight-card p {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #101010;
+}
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 40px;
+}
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 24px 18px;
+  min-width: 200px;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  transition: box-shadow 0.2s;
+}
+.product-card:hover {
+  box-shadow: 0 6px 24px #0002;
+}
+.product-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: #eee;
+}
+.product-card h4 {
+  font-size: 1.1em;
+  margin-bottom: 4px;
+  color: #222;
+}
+.product-card p {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #1976d2;
+}
+
+/* Add Product Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 32px 28px 24px 28px;
+  border-radius: 12px;
+  max-width: 350px;
+  margin: auto;
+  position: relative;
+  box-shadow: 0 2px 16px #0002;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 1.4em;
+  color: #1976d2;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-size: 1.5em;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.modal-content .close:hover {
+  color: #1976d2;
+}
+
+#addProductForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#addProductForm input[type="text"],
+#addProductForm input[type="number"] {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.2s;
+}
+#addProductForm input:focus {
+  border: 1.5px solid #1976d2;
+}
+
+#addProductForm button[type="submit"] {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+#addProductForm button[type="submit"]:hover {
+  background: #125ea8;
+}
+
+/* Add Post Modal Styling */
+#addPostModal .modal-content {
+  background: #fff;
+  padding: 32px 28px 24px 28px;
+  border-radius: 12px;
+  max-width: 400px;
+  margin: auto;
+  position: relative;
+  box-shadow: 0 2px 16px #0002;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+}
+
+#addPostModal h2 {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 1.4em;
+  color: #1976d2;
+}
+
+#addPostForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#addPostForm input[type="text"],
+#addPostForm textarea,
+#addPostForm input[type="url"] {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.2s;
+  background: #fafbfc;
+  color: #22223b;
+}
+
+#addPostForm input:focus,
+#addPostForm textarea:focus,
+#addPostForm input[type="url"]:focus {
+  border: 1.5px solid #1976d2;
+}
+
+#addPostForm textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+#addPostForm button[type="submit"] {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+#addPostForm button[type="submit"]:hover {
+  background: #125ea8;
+}
+
+/* Optional: image preview styling for posts */
+.post-image-preview {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: none;
+}
+
+/* Make all icons black by default */
+i.fa-solid,
+i.fa {
+  color: #22223b !important;
+}
+
+/* Insights icons: keep them black (override if needed) */
+.insight-card i {
+  color: #22223b !important;
+}
+
+/* Add Product button icon */
+.add-product-btn i {
+  color: #22223b !important;
+}
+
+/* Add Product Modal close icon and plus icon */
+.modal-content .close,
+#addProductForm button[type="submit"] i {
+  color: #22223b !important;
+}
+
+body.dark {
+  background-color: #18191a;
+  color: #f1f1f1;
+}
+body.dark nav,
+body.dark .modal-content,
+body.dark .product-insights,
+body.dark .product-card,
+body.dark .insight-card,
+body.dark .tab-bar {
+  background-color: #23272f !important;
+  color: #f1f1f1 !important;
+  box-shadow: 0 2px 8px #0006;
+}
+body.dark .tab-btn.active {
+  background: #23272f !important;
+  color: #90caf9 !important;
+  border-bottom: 3px solid #90caf9;
+}
+body.dark .tab-btn {
+  color: #f1f1f1;
+}
+body.dark .add-product-btn,
+body.dark #addProductForm button[type="submit"] {
+  background: #101010;
+  color: #fff;
+}
+body.dark .add-product-btn:hover,
+body.dark #addProductForm button[type="submit"]:hover {
+  background: #333;
+}
+body.dark .modal {
+  background: rgba(0, 0, 0, 0.7);
+}
+body.dark input,
+body.dark input[type="text"],
+body.dark input[type="number"] {
+  background: #23272f;
+  color: #f1f1f1;
+  border: 1px solid #444;
+}
+body.dark .product-card p,
+body.dark .insight-card p {
+  color: #90caf9;
+}
+body.dark i.fa-solid,
+body.dark i.fa {
+  color: #90caf9 !important;
+}
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  margin-left: 20px;
+  cursor: pointer;
+  color: #101010;
+  transition: color 0.2s;
+}
+body.dark .theme-toggle-btn {
+  color: #90caf9;
+}
+.theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 24px;
+}
+.theme-label {
+  font-size: 1em;
+  color: #22223b;
+  font-weight: 500;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+.switch input:checked + .slider {
+  background-color: #22223b;
+}
+.switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
+body.dark .theme-label {
+  color: #90caf9;
+}
+
+body.dark,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark p,
+body.dark a,
+body.dark span,
+body.dark label,
+body.dark .logo,
+body.dark .insight-card h3,
+body.dark .insight-card p,
+body.dark .product-card h4,
+body.dark .product-card p,
+body.dark .theme-label {
+  color: #42a5f5 !important;
+}
+
+body.dark .add-product-btn,
+body.dark #addProductForm button[type="submit"] {
+  background-color: #101010 !important;
+  color: #90caf9 !important;
+}
+body.dark .add-product-btn:hover,
+body.dark #addProductForm button[type="submit"]:hover {
+  background: #22223b !important;
+}
+.add-post-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #101010;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 6px 32px 0 rgba(67, 67, 67, 0.12),
+    0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  transition: background 0.2s;
+  margin: 32px auto 0 auto;
+}
+.add-post-btn i {
+  color: #22223b !important;
+}
+body.dark .add-post-btn {
+  background-color: #101010 !important;
+  color: #90caf9 !important;
+}
+body.dark .add-post-btn:hover {
+  background: #22223b !important;
+}
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 40px auto 0 auto;
+  max-width: 600px;
+}
+.post-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px #0001;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.post-card h4 {
+  font-size: 1.15em;
+  margin-bottom: 4px;
+  color: #1976d2;
+}
+.post-card p {
+  font-size: 1em;
+  color: #22223b;
+}
+body.dark .post-card {
+  background: #23272f;
+}
+body.dark .post-card h4,
+body.dark .post-card p {
+  color: #42a5f5 !important;
+}
