@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+body {
+  background-color: #efefef;
+  background-image: linear-gradient(to right, #e0e3eb8e 1px, transparent 1px),
+    linear-gradient(to bottom, #e0e3eb8e 1px, transparent 1px);
+  background-size: 60px 60px;
+  overflow-x: hidden;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 40px;
+}
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.head h1 {
+  font-size: 50px;
+}
+.head p {
+  color: #2e2e2e;
+  font-size: 20px;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 30px;
+  background-color: #f5f5f5;
+  gap: 25px;
+  border-radius: 10px;
+  border: 1px solid #cbcbcb9d;
+}
+.box input {
+  width: 80%;
+  border: 1px solid #cbcbcb;
+  background-color: transparent;
+  padding: 5px 10px;
+}
+.box h1 {
+  font-size: 30px;
+}
+.box p {
+  color: #2e2e2e;
+}
+.box button {
+  color: #fff;
+  background-color: #101010;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+}
+.box button:hover {
+  background-color: #3c3c3c;
+}
+.box a {
+  color: #101010;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.box a:hover {
+  text-decoration: underline;
+}
+.theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 24px;
+}
+.theme-label {
+  font-size: 1em;
+  color: #22223b;
+  font-weight: 500;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+.switch input:checked + .slider {
+  background-color: #22223b;
+}
+.switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
+body.dark {
+  background-color: #18191a;
+  color: #f1f1f1;
+}
+body.dark nav,
+body.dark .modal-content,
+body.dark .product-insights,
+body.dark .product-card,
+body.dark .insight-card,
+body.dark .tab-bar,
+body.dark .box,
+body.dark .card,
+body.dark .features,
+body.dark .localix,
+body.dark .end,
+body.dark .posts,
+body.dark .post {
+  background-color: #23272f !important;
+  color: #f1f1f1 !important;
+  box-shadow: 0 2px 8px #0006;
+}
+body.dark .tab-btn.active {
+  background: #23272f !important;
+  color: #90caf9 !important;
+  border-bottom: 3px solid #90caf9;
+}
+body.dark .tab-btn {
+  color: #f1f1f1;
+}
+body.dark .add-product-btn,
+body.dark #addProductForm button[type="submit"] {
+  background: #101010;
+  color: #fff;
+}
+body.dark .add-product-btn:hover,
+body.dark #addProductForm button[type="submit"]:hover {
+  background: #333;
+}
+body.dark .modal {
+  background: rgba(0, 0, 0, 0.7);
+}
+body.dark input,
+body.dark input[type="text"],
+body.dark input[type="number"] {
+  background: #23272f;
+  color: #f1f1f1;
+  border: 1px solid #444;
+}
+body.dark .product-card p,
+body.dark .insight-card p {
+  color: #90caf9;
+}
+body.dark i.fa-solid,
+body.dark i.fa {
+  color: #90caf9 !important;
+}
+body.dark .theme-label {
+  color: #90caf9;
+}
+body.dark nav ul a,
+body.dark nav ul li a,
+body.dark .search a,
+body.dark .signOut a {
+  color: #42a5f5 !important;
+}
+body.dark .insight-card h3,
+body.dark .insight-card p {
+  color: #42a5f5 !important;
+}
+
+body.dark,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark p,
+body.dark a,
+body.dark span,
+body.dark label,
+body.dark .logo,
+body.dark .box h1,
+body.dark .box p {
+  color: #42a5f5 !important;
+}
+body.dark .box button {
+  background-color: #101010 !important;
+  color: #90caf9 !important;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 80px;
+  background: transparent;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: #22223b;
+  font-weight: 500;
+  font-size: 1.1em;
+  transition: color 0.2s;
+}
+
+nav ul a:hover {
+  color: #1976d2;
+}
